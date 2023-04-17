@@ -1,3 +1,13 @@
+%mkdir "ply" 
+%cd "ply"
+%rm "lex.py"
+%rm "yacc.py"
+!wget -q "https://raw.githubusercontent.com/dabeaz/ply/master/src/ply/lex.py"
+!wget -q "https://raw.githubusercontent.com/dabeaz/ply/master/src/ply/yacc.py"
+%cd "../"
+
+__file__ = "asg3_startingpoint.ipynb"
+
 # -----------------------------------------------------------------------------
 # example.py
 #
@@ -53,14 +63,13 @@
 # -----------------------------------------------------------------------------
 
 from ply.lex import lex
-from ply.yacc import yacc
-
+from ply.yacc import yacc 
 
 # helper func for reading in tiny basic example files
 def readFile(filename):
-    print('\nREADING FILE', filename)
-    with open(filename, 'r') as file:
-        return file.read()
+  print('\nREADING FILE', filename)
+  with open(filename, 'r') as file:
+    return file.read()
 
 
 # --- Tokenizer
